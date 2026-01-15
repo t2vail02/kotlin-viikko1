@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -75,13 +77,14 @@ fun HomeScreen() {
     var priority by remember {mutableStateOf(value="1")}
     var dueDate by remember {mutableStateOf(value="YYYY-MM-DD")}
     val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
+    val scrollState = rememberScrollState()
 
 
     var taskList by remember { mutableStateOf(value = mockData) }
 
     Column(
         modifier = Modifier
-            .fillMaxSize()
+            .fillMaxSize().verticalScroll(scrollState)
             .padding(35.dp)
     ) {
         Spacer(modifier = Modifier.height(32.dp))
