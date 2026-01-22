@@ -36,3 +36,17 @@ Suodattaa tehtävät
 
 ### `sortByDueDate(list:List<Task>):List<Task>`
 Järjestää tehtävät duedaten mukaan.
+
+# Viikko2
+
+### Compose tilanhallinta
+
+Jetpack composessa UI rakentuu aina tilan(state) mukaan. Kun tila muuttuu, compose piirtää uudelleen tarvittavat osat UI:sta. UI ei siis käsittele manuaalisesti näkymien tilaa, vaan se päivittyy state-muuttujien mukaan.
+
+### ViewModel vs. remember
+
+ViewModel pysyy muistissa, vaikka composable muuttuu (esim näytön kääntyminen portrait->landscape). Composable taas kyseisessä muutoksessa hävittää muistista tiedon. 
+
+
+
+
